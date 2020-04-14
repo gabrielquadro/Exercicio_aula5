@@ -11,7 +11,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class tela3 extends AppCompatActivity {
@@ -38,17 +40,21 @@ public class tela3 extends AppCompatActivity {
         estados.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), "Posiçao : " + position, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Posiçao : " + position, Toast.LENGTH_SHORT).show();
+                //int pos = estados.getSelectedItemPosition();
                 switch (position){
                     case 0:
                         ArrayAdapter<String> adapter1 = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Arrays.asList(rs));
                         listView.setAdapter(adapter1);
+                        break;
                     case 1:
                         ArrayAdapter<String> adapter2 = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Arrays.asList(sc));
                         listView.setAdapter(adapter2);
+                        break;
                     case 2:
                         ArrayAdapter<String> adapter3 = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Arrays.asList(pr));
                         listView.setAdapter(adapter3);
+                        break;
                 }
             }
 
