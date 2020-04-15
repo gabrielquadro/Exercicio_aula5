@@ -11,6 +11,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -19,8 +20,8 @@ import java.util.List;
 public class tela3 extends AppCompatActivity {
 
     private Spinner estados;
-    String[] estadosSul = {"Rio Grande do Sul","Santa Catarina","Paraná"};
     private ListView listView;
+    String[] estadosSul = {"Rio Grande do Sul","Santa Catarina","Paraná"};
     String [] rs = {"Porto Alegre","Santa Cruz do Sul","Cachoeira do Sul"};
     String [] sc = {"Florianópolis","Balneário Camboriú","Tubarão"};
     String[] pr = {"Curitiba", "Londrina", "Maringá"};
@@ -44,15 +45,15 @@ public class tela3 extends AppCompatActivity {
                 //int pos = estados.getSelectedItemPosition();
                 switch (position){
                     case 0:
-                        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Arrays.asList(rs));
+                        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(getApplicationContext(), R.layout.listalayout, Arrays.asList(rs));
                         listView.setAdapter(adapter1);
                         break;
                     case 1:
-                        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Arrays.asList(sc));
+                        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(getApplicationContext(), R.layout.listalayout, Arrays.asList(sc));
                         listView.setAdapter(adapter2);
                         break;
                     case 2:
-                        ArrayAdapter<String> adapter3 = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Arrays.asList(pr));
+                        ArrayAdapter<String> adapter3 = new ArrayAdapter<>(getApplicationContext(), R.layout.listalayout, Arrays.asList(pr));
                         listView.setAdapter(adapter3);
                         break;
                 }
@@ -64,4 +65,5 @@ public class tela3 extends AppCompatActivity {
             }
         });
     }
+
 }
